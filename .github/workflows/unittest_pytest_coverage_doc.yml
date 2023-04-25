@@ -1,5 +1,11 @@
 name: unittest_pytest_coverage_doc
 
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
   macos-1015_test:
     needs: pep8_check
