@@ -74,7 +74,12 @@ class ScriptPfuCheckChecksum(unittest.TestCase):
                 'pfu check_checksum ' + param,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                 shell=True,
-                timeout=42, check=True)
+                timeout=42, check=False)
+            print('\n\n')
+            print(f'cpi.stdout: {cpi.stdout.decode()}')
+            print(f'cpi.stderr: {cpi.stderr.decode()}')
+            print('\n\n')
+            self.assertEqual(cpi.returncode, 0)
             self.assertTrue(checkoutput(cpi.stderr))
 
     def test_script_pfu_check_checksum_1(self):
@@ -106,7 +111,12 @@ class ScriptPfuCheckChecksum(unittest.TestCase):
                             'pfu check_checksum ' + param,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                             shell=True, cwd=tmpdir,
-                            timeout=42, check=True)
+                            timeout=42, check=False)
+                        print('\n\n')
+                        print(f'cpi.stdout: {cpi.stdout.decode()}')
+                        print(f'cpi.stderr: {cpi.stderr.decode()}')
+                        print('\n\n')
+                        self.assertEqual(cpi.returncode, 0)
                         self.assertTrue(checkoutput(cpi.stderr))
 
     def test_script_pfu_check_checksum_2(self):
@@ -381,7 +391,12 @@ class ScriptPfuCheckChecksum(unittest.TestCase):
                         'pfu check_checksum ' + param,
                         stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                         shell=True, cwd=tmpdir,
-                        timeout=42, check=True)
+                        timeout=42, check=False)
+                    print('\n\n')
+                    print(f'cpi.stdout: {cpi.stdout.decode()}')
+                    print(f'cpi.stderr: {cpi.stderr.decode()}')
+                    print('\n\n')
+                    self.assertEqual(cpi.returncode, 0)
                     self.assertTrue(checkoutput(cpi.stderr))
                     # change data
                     for root, _, files in os.walk(tmpdir):
