@@ -17,6 +17,9 @@ jobs:
       run: sudo pip3 install .
     - name: run pfu
       run: |
+        python3 --version
+        which python3
+        ls -lah /usr/local/bin/python*
         which pfu
         pfu -h
         pfu simscrub -h
@@ -42,7 +45,9 @@ jobs:
       run: sudo pip3 install .
     - name: run pfu
       run: |
+        python3 --version
         which python3
+        ls -lah /usr/local/bin/python*
         which pfu
         pfu -h
         pfu simscrub -h
@@ -68,7 +73,9 @@ jobs:
       run: sudo pip3 install .
     - name: run pfu
       run: |
+        python3 --version
         which python3
+        ls -lah /usr/local/bin/python*
         which pfu
         pfu -h
         pfu simscrub -h
@@ -102,9 +109,9 @@ jobs:
           ls -lah
           whoami
           freebsd-version
-          which python3.8
           ls -lah /usr/local/bin/python*
-          python3.8 setup.py install --record installed_files.txt
+          which python3.11
+          python3.11 setup.py install --record installed_files.txt
           which pfu
           pfu -h
           pfu simscrub -h
@@ -112,6 +119,6 @@ jobs:
           pfu check_checksum -h
           pfu replicate -h
           pfu speed_test -h
-          python3.8 setup.py run_unittest
-          python3.8 setup.py run_pytest --parallel --coverage
+          python3.11 setup.py run_unittest
+          python3.11 setup.py run_pytest --parallel --coverage
           cat installed_files.txt | xargs rm -rf && echo "uninstalled/removed: "$(cat installed_files.txt)
