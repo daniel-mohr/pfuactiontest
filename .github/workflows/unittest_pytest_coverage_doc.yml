@@ -2,9 +2,7 @@ name: unittest_pytest_coverage_doc
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   macos-1015_test:
