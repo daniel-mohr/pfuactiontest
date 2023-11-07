@@ -129,6 +129,8 @@ jobs:
     runs-on: macos-13
     steps:
     - uses: actions/checkout@v4
+    - name: install dependencies using pip
+      run: sudo pip3 install setuptools
     - name: install pfu
       run: sudo pip3 install .
     - name: check all modules available
