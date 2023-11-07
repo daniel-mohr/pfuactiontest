@@ -226,7 +226,7 @@ jobs:
     needs: pep8_check
     # https://github.com/marketplace/actions/freebsd-vm
     runs-on: ubuntu-22.04
-    name: run tests on FreeBSD
+    name: run tests on FreeBSD new
     steps:
     - uses: actions/checkout@v4
     - name: Test in FreeBSD
