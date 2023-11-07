@@ -77,6 +77,8 @@ jobs:
     runs-on: macos-11
     steps:
     - uses: actions/checkout@v4
+    - name: install dependencies using pip
+      run: sudo pip3 install setuptools
     - name: check all modules available
       run: env python3 setup.py check_modules
     - name: install pfu
@@ -103,6 +105,8 @@ jobs:
     runs-on: macos-12
     steps:
     - uses: actions/checkout@v4
+    - name: install dependencies using pip
+      run: sudo pip3 install setuptools
     - name: check all modules available
       run: env python3 setup.py check_modules
     - name: install pfu
@@ -131,10 +135,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: install dependencies using pip
       run: sudo pip3 install setuptools
-    - name: install pfu
-      run: sudo pip3 install .
     - name: check all modules available
       run: env python3 setup.py check_modules
+    - name: install pfu
+      run: sudo pip3 install .
     - name: run pfu
       run: |
         which pfu
