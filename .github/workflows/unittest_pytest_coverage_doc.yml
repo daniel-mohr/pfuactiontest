@@ -129,10 +129,10 @@ jobs:
     runs-on: macos-13
     steps:
     - uses: actions/checkout@v4
-    - name: check all modules available
-      run: env python3 setup.py check_modules
     - name: install pfu
       run: sudo pip3 install .
+    - name: check all modules available
+      run: env python3 setup.py check_modules
     - name: run pfu
       run: |
         which pfu
