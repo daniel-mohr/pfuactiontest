@@ -365,7 +365,7 @@ jobs:
           echo "cat /etc/os-release" >> do_test
           echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y python3-setuptools python3-pip hashdeep python3-pytest python3-pytest-cov python3-pytest-xdist" >> do_test
           echo "env python3 setup.py check_modules" >> do_test
-          echo "pip3 install ." >> do_test
+          echo "pip3 install --break-system-packages ." >> do_test
           echo "which pfu" >> do_test
           echo "pfu -h" >> do_test
           echo "pfu simscrub -h" >> do_test
