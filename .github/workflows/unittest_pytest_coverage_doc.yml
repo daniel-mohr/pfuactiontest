@@ -2,9 +2,9 @@ name: unittest_pytest_coverage_doc
 
 on:
   push:
-    branches: [ ${{ github.event.repository.default_branch }} ]
+    branches: [ main ]
   pull_request:
-    branches: [ ${{ github.event.repository.default_branch }} ]
+    branches: [ main ]
 
 jobs:
 
